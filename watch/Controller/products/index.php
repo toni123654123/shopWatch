@@ -20,24 +20,28 @@ switch ($action) {
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $data = $db->getId("product", "proId", $id);
+                $similar = $db->Get("product", "catId", $data['catId']);
             }
 
             if (isset($_GET['ids'])) {
                 $id = $_GET['ids'];
                 $data = $db->getId("product", "proId", $id);
+                $similar = $db->Get("product", "catId", $data['catId']);
 
                 $item = [
                     'proId' => $data['proId'],
                     'proName' => $data['proName'],
                     'proImage' => $data['proImage'],
                     'proPrice' => $data['proPrice'],
-                    'quantity' => 1,
+                    'quantity' => $_GET['qty'],
                 ];
+
+
+
 
                 if (isset($_SESSION['cart'])) {
                     if (isset($_SESSION['cart'][$id])) {
-
-                        $_SESSION['cart'][$id]['quantity'] += 1;
+                        $_SESSION['cart'][$id]['quantity'] += $_GET['qty'];
                     } else {
                         $_SESSION['cart'][$id] = $item;
                     }
@@ -56,26 +60,6 @@ switch ($action) {
                 $user = $_SESSION['user'];
                 $info = $db->getId("user", "user", $user);
             }
-
-            if (isset($_POST['cmt'])) {
-                $userid = $info['userid'];
-                $cmt_name = $user;
-                $cmt_text = $_POST['cmtText'];
-
-
-                $db->Insert(
-                    'comment',
-                    array(
-                        "userid" => $userid,
-                        "proId" => $id,
-                        "cmt_name" => $cmt_name,
-                        "cmt_text" => $cmt_text,
-                    )
-                );
-            }
-
-            $dataCmt = $db->Get("comment", "proId", $id);
-
 
             require_once("View/products/item.php");
             break;

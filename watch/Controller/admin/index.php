@@ -415,27 +415,6 @@ switch ($action) {
             require_once("View/admin/order/check.php");
             break;
         }
-        /** ============================================ COMMENT ==================================*/
-    case 'comment': {
-            $cmt = $db->Getall("comment");
-            require_once("View/admin/comment/comment.php");
-            break;
-        }
-
-    case 'del_cmt': {
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-                if ($db->Delete("comment", "cmt_id", $id)) {
-                    $msg = "success";
-                    $cmt = $db->Getall("comment");
-                } else {
-                    $msg = "error";
-                }
-            }
-            require_once("View/admin/comment/comment.php");
-            break;
-        }
-
         /** =============================================== LOGIN ==================================*/
     case 'login': {
             if (isset($_POST['login'])) {

@@ -41,12 +41,6 @@
 					<div class="clearfix"></div>
 				</a>
 			</li>
-
-			<li>
-				<a href="index.php?c=admin&a=comment" class="link_item"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Bình luận</span>
-					<div class="clearfix"></div>
-				</a>
-			</li>
 		</ul>
 	</div>
 </div>
