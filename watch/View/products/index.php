@@ -6,7 +6,7 @@
     </section>
     <!-- ========== FEATURE =========== -->
     <section class="featured">
-        <h2 class="featured__title">Popular Items</h2>
+        <h2 class="featured__title">Danh sách sản phẩm</h2>
         <span class="featured__desc">Consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
@@ -76,12 +76,19 @@
                         <div class="featured__box">
                             <img src="upload/<?php echo $val['proImage'];
                                                 ?>" alt="">
-                            <a href="index.php?c=product&a=heartcart&id=<?php echo $val['proId']; ?>">
-                                <i class='bx bx-heart featured__icon'></i>
-                            </a>
+                            <?php
+                            if (!empty($_SESSION['user'])) { ?>
+                                <a href="index.php?c=product&a=heartcart&id=<?php echo $val['proId']; ?>">
+                                    <i class='bx bx-heart featured__icon'></i>
+                                </a>
+                            <?php } else { ?>
+                                <a href="#" onclick='showErrorToast("Bạn cần phải đăng nhập để yêu thích sản phẩm !")'>
+                                    <i class='bx bx-heart featured__icon'></i>
+                                </a>
+                            <?php } ?>
 
                             <a href="index.php?c=product&a=addcart&id=<?php echo $val['proId'];
-                                                                        ?>" class="button">Add to cart</a>
+                                                                        ?>" class="button">Thêm vào giỏ</a>
                         </div>
 
                         <div class="featured__data">

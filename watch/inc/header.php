@@ -7,11 +7,19 @@
     <title>Shop Watch</title>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="admin/css/font-awesome.css" rel="stylesheet">
+    <script src="Toast/toast.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
+<style>
+    .toast {
+        padding: 10px;
+    }
+</style>
 
 <body>
-
+    <?php
+    require 'Toast/index.php'; ?>
     <!-- ======= HEADER ====== -->
     <header class="l-header" id="header">
         <nav class="nav bd-grid">

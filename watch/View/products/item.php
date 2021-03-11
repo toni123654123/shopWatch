@@ -9,7 +9,7 @@ require 'inc/header.php';
     </section>
     <!-- ========== PRODUCT =========== -->
     <section class="products">
-        <h2 class="products__title">Products Items</h2>
+        <h2 class="products__title">Chi tiết sản phẩm</h2>
         <form action="">
             <div class="products__container bd-grid">
                 <div class="products__box">
@@ -29,8 +29,18 @@ require 'inc/header.php';
                     <input class="plus is-form" type="button" value="+">
 
                     <p class="products__price">Giá: $ <?= $data['proPrice']; ?></p>
-                    <div>
-                        <button type="submit" class="button">Add to cart</button>
+                    <div style="margin-top: 20px;">
+                        <button type="submit" class="button">Thêm vào giỏ</button>
+                        <?php
+                        if (!empty($_SESSION['user'])) { ?>
+                            <a href="index.php?c=product&a=item&Id=<?php echo $data['proId']; ?>" class="button">
+                                Yêu thích
+                            </a>
+                        <?php } else { ?>
+                            <a href="#" class="button" onclick='showErrorToast("Bạn cần phải đăng nhập để yêu thích sản phẩm !")'>
+                                Yêu thích
+                            </a>
+                        <?php } ?>
                     </div>
                     <div class="products__desc" style="margin-top: 35px;"><?= $data['proDetail']; ?>
                     </div>

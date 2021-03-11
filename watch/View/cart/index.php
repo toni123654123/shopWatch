@@ -107,7 +107,7 @@ require 'inc/header.php';
                         if (!empty($cart)) { ?>
                             <a href="index.php?c=order" class="cart__button">Mua hàng</a>
                         <?php } else { ?>
-                            <a href="#" class="cart__button" onclick="showError()">Mua hàng</a>
+                            <a href="#" class="cart__button" onclick='showErrorToast("Giỏ hàng của bạn hiện chưa có sản phẩm. <br /> Vui lòng thêm sản phẩm để mua hàng !!!")'>Mua hàng</a>
                         <?php }
                         ?>
                     </td>

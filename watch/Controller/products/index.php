@@ -57,6 +57,30 @@ switch ($action) {
                 $cart = $_SESSION['cart'];
             }
 
+            if (isset($_GET['Id'])) {
+                $id = $_GET['Id'];
+                $data = $db->getId("product", "proId", $id);
+                $heartcart = $db->getId("product", "proId", $id);
+
+                $item = [
+                    'proId' => $heartcart['proId'],
+                    'proName' => $heartcart['proName'],
+                    'proImage' => $heartcart['proImage'],
+                    'proDetail' => $heartcart['proDetail'],
+                    'proPrice' => $heartcart['proPrice'],
+                    'quantity' => 1,
+                ];
+
+
+                $_SESSION['heart'][$id] = $item;
+            }
+
+            if (!isset($_SESSION['heart'])) {
+                return  false;
+            } else {
+                $heart = $_SESSION['heart'];
+            }
+
 
 
             if (isset($_SESSION['user'])) {

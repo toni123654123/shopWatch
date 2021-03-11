@@ -33,7 +33,7 @@ require 'inc/header.php';
                     ?>
                             <tr>
                                 <td class="cart__item text-center">
-                                    <a href="index.php?c=cart&a=del&id=<?= $val['proId']; ?>" class="cart__icon"><i class='bx bx-x-circle'></i></a>
+                                    <a href="index.php?c=heart&a=del&id=<?= $val['proId']; ?>" class="cart__icon"><i class='bx bx-x-circle'></i></a>
                                 </td>
                                 <td class="cart__item">
                                     <img src="upload/<?php echo $val['proImage']; ?>" alt="">
