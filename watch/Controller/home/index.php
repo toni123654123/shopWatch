@@ -13,6 +13,9 @@ switch ($action) {
             if (isset($_SESSION['cart'])) {
                 $cart = $_SESSION['cart'];
             }
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
+            }
             require_once("View/home/index.php");
             break;
         }
@@ -22,6 +25,9 @@ switch ($action) {
             $asc = $db->getLimit("product", "ASC", 6);
             if (isset($_SESSION['cart'])) {
                 $cart = $_SESSION['cart'];
+            }
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
             }
             require_once("View/home/index.php");
             break;

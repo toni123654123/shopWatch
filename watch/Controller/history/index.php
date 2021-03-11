@@ -12,6 +12,12 @@ switch ($action) {
                 $userid = $db->getId('user', 'user', $_SESSION['user']);
                 $orderid = $db->historyOrder('orders', 'userid', $userid['userid']);
             }
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
+            }
             require_once("View/historyOrder/index.php");
             break;
         }
