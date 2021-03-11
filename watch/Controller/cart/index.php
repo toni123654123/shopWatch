@@ -33,6 +33,7 @@ switch ($action) {
 
     default: {
             $cart = $_SESSION['cart'];
+            $heart = $_SESSION['heart'];
             require_once("View/cart/index.php");
             break;
         }

@@ -35,6 +35,11 @@ switch ($controller) {
             break;
         }
 
+    case 'heart': {
+            require_once("Controller/heart/index.php");
+            break;
+        }
+
     case 'order': {
             require_once("Controller/order/index.php");
             break;

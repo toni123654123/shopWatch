@@ -22,9 +22,7 @@
                     <li class="nav__item"><a href="index.php" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="index.php?c=product" class="nav__link">Shop</a></li>
                     <li class="nav__item"><a href="index.php?c=history" class="nav__link">History</a></li>
-                    <li class="nav__item"><a href="#index.php?c=Latest" class="nav__link">Latest</a></li>
                     <li class="nav__item"><a href="#index.php?c=Blog" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="#index.php?c=Pages" class="nav__link">Pages</a></li>
                     <li class="nav__item"><a href="#index.php?c=Contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
@@ -36,6 +34,23 @@
                         <span>Tài khoản: <span><?php echo $_SESSION['user'];  ?></span></span>
                     </div>
                 <?php } ?>
+
+                <a href="index.php?c=heart" id="nav-cart">
+                    <i class='bx bx-heart nav__cart'></i>
+                    </i>
+                    <span class="cart__num">
+                        <?php
+                        $number = [];
+                        if (!empty($heart)) {
+                            foreach ($heart as $val) {
+                                $number[] = $val['quantity'];
+                            };
+                        }
+                        $number == ""  ? $kq = "0" : $kq =  array_sum($number);
+                        echo $kq;
+                        ?>
+                    </span>
+                </a>
 
                 <a href="index.php?c=cart" id="nav-cart">
                     <i class='bx bx-cart nav__cart'>

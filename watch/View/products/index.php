@@ -76,7 +76,10 @@
                         <div class="featured__box">
                             <img src="upload/<?php echo $val['proImage'];
                                                 ?>" alt="">
-                            <i class='bx bx-heart featured__icon'></i>
+                            <a href="index.php?c=product&a=heartcart&id=<?php echo $val['proId']; ?>">
+                                <i class='bx bx-heart featured__icon'></i>
+                            </a>
+
                             <a href="index.php?c=product&a=addcart&id=<?php echo $val['proId'];
                                                                         ?>" class="button">Add to cart</a>
                         </div>
