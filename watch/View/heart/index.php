@@ -65,7 +65,7 @@ require 'inc/header.php';
     <?php
     require 'inc/footer.php';
     ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
     <script>
         function showError() {
             $(".error__msg").removeClass("d-none");

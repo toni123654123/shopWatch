@@ -8,24 +8,23 @@
     <section class="blog">
         <div class="blog__container bd-grid">
             <div class="blog__news">
-                <?php foreach ($data as $val) { ?>
-                    <div class="blog__box">
-                        <div class="blog__img">
-                            <img src="/upload/<?= $val['image']; ?>" alt="">
-                            <div class="blog__time"> <?= $val['time']; ?></div>
+
+                <div class="blog__box">
+                    <div class="blog__img">
+                        <img src="/upload/<?= $dataid['image']; ?>" alt="">
+                        <div class="blog__time"> <?= $dataid['time']; ?></div>
+                    </div>
+                    <div class="blog__data">
+                        <a href="#" class="blog__title"><?= $dataid['title']; ?></a>
+                        <div class="blog__desc">
+                            <?= $dataid['content']; ?>
                         </div>
-                        <div class="blog__data">
-                            <a href="index.php?c=blog&a=item&id=<?= $val['blog_id']; ?>" class="blog__title"><?= $val['title']; ?></a>
-                            <div class="blog__desc">
-                                <?= $val['content']; ?>
-                            </div>
-                            <div class="blog__note">
-                                <div class="blog__author"><i class='bx bxs-user'></i> <?= $val['author']; ?></div>
-                                <div class="blog__cmt"><i class='bx bx-message-rounded'></i> 3 Comment</div>
-                            </div>
+                        <div class="blog__note">
+                            <div class="blog__author"><i class='bx bxs-user'></i> <?= $dataid['author']; ?></div>
+                            <div class="blog__cmt"><i class='bx bx-message-rounded'></i> 3 Comment</div>
                         </div>
                     </div>
-                <?php } ?>
+                </div>
             </div>
             <div class="blog__cate">
                 <div class="blog__box blog__cate--box">
@@ -66,7 +65,7 @@
     <?php
     require 'inc/footer.php';
     ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
     </body>
 
     </html>

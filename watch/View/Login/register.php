@@ -7,7 +7,7 @@
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" type="text/css" href="../fontawesome-free/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
 </head>
 
 <body>

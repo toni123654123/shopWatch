@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="admin/css/font-awesome.css" rel="stylesheet">
     <script src="Toast/toast.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
 </head>
 <style>
     .toast {

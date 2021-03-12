@@ -112,7 +112,7 @@
     <?php
     require 'inc/footer.php';
     ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
     <script>
         $("input:checkbox").on('click', function() {
             // in the handler, 'this' refers to the box clicked on
