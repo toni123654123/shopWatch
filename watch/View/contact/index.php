@@ -6,17 +6,17 @@
     </section>
     <!-- ========== BLOG =========== -->
     <section class="blog">
-        <div class="blog__container bd-grid">
+        <div class="bd-grid">
             <div class="blog__news" style="text-align: center;">
                 <form action="" class="contact__form">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Nhập nội dung"></textarea>
+                    <textarea name="" id="" placeholder="Nhập nội dung"></textarea>
                     <div class="form-group">
                         <input type="text" name="" id="" placeholder="Nhập tên của bạn">
                         <input type="text" name="" id="" placeholder="Nhập email của bạn">
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="" id="" placeholder="">
-                    </div>
+
+                    <input type="text" name="" id="" placeholder="">
+                    <button type="submit" class="button btn_send">Gửi</button>
                 </form>
             </div>
         </div>

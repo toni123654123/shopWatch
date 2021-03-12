@@ -1114,10 +1114,42 @@ img {
   margin-bottom: var(--mb-1);
 }
 
+.contact__form {
+  margin-bottom: var(--mb-4);
+}
+
 .contact__form textarea,
 .contact__form input {
   border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
+  width: 100%;
+}
+
+.contact__form textarea {
+  height: 150px;
+  padding: 10px;
+}
+
+.contact__form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: var(--mb-1);
+}
+
+.contact__form .form-group input {
+  width: 48%;
+}
+
+.contact__form input {
+  padding: 12px;
+  margin-bottom: var(--mb-1);
 }
 
 .background {
@@ -1365,6 +1397,9 @@ img {
   }
   .blog__other--data {
     margin-left: var(--mb-3);
+  }
+  .contact__form {
+    padding: 0px 200px;
   }
   .cart__container {
     -ms-grid-columns: 3fr 1fr;

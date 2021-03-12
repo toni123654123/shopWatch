@@ -1042,7 +1042,29 @@ img {
     input {
         border: 1px solid rgba(0, 0, 0, 0.2);
         outline: none;
+        width: 100%;
     }
+    textarea {
+        height: 150px;
+        padding: 10px;
+    }
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            width: 48%;
+        }
+        margin-top: var(--mb-1);
+    }
+
+    input {
+        padding: 12px;
+        margin-bottom: var(--mb-1);
+    }
+
+    margin-bottom: var(--mb-4);
 }
 
 .background {
@@ -1303,6 +1325,10 @@ img {
                 margin-left: var(--mb-3);
             }
         }
+    }
+
+    .contact__form {
+        padding: 0px 200px;
     }
 
     .cart {
