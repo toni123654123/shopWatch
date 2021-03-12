@@ -7,19 +7,11 @@ if (isset($_GET['a'])) {
 }
 
 switch ($action) {
-
-    case 'del': {
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-
-                unset($_SESSION['heart'][$id]);
-            }
-            $heart = $_SESSION['heart'];
-            require_once("View/heart/index.php");
-            break;
+    case 'blog': {
+            $data = $db->Getall("blog");
         }
-
     default: {
+
             if (isset($_SESSION['cart'])) {
                 $cart = $_SESSION['cart'];
             }
@@ -27,7 +19,8 @@ switch ($action) {
             if (isset($_SESSION['heart'])) {
                 $heart = $_SESSION['heart'];
             }
-            require_once("View/heart/index.php");
+            $data = $db->Getall("blog");
+            require_once("View/blog/index.php");
             break;
         }
 }

@@ -187,7 +187,7 @@ switch ($action) {
                 $id = $_GET['id'];
                 if ($db->Delete("product", "proId", $id)) {
                     $msg = "success";
-                    $data = $db->showProduct("product");
+                    $data = $db->Getall("product");
                 } else {
                     $msg = "error";
                 }
@@ -276,6 +276,181 @@ switch ($action) {
             require_once("View/admin/category/category.php");
             break;
         }
+
+        /** ========================= BLOG ==================================*/
+    case 'blog': {
+            $data = $db->Getall("blog");
+
+            if (isset($_GET['q'])) {
+                $srch = $_GET['q'];
+                $data = $db->Search("blog", "title", $srch);
+            }
+
+            require_once("View/admin/blog/blog.php");
+            break;
+        }
+
+    case 'add_blog': {
+            if (isset($_POST['addBlog'])) {
+                $blogTitle = $_POST['blogTitle'];
+                $blogImg = $_FILES['file']['name'];
+                $blogContent = $_POST['blogContent'];
+                $blogAuthor = $_POST['blogAuthor'];
+                $date = date('m/d H:i', time());
+
+                if (isset($_FILES['file'])) {
+                    if ($_FILES['file']['error'] > 0) {
+                        echo "Upload lỗi rồi!";
+                    } else {
+                        move_uploaded_file($_FILES['file']['tmp_name'], 'upload/' . $_FILES['file']['name']);
+                    }
+                }
+
+                if ($db->Insert(
+                    'blog',
+                    array(
+                        "title" => $blogTitle,
+                        "image" => $blogImg,
+                        "content" => $blogContent,
+                        "author" => $blogAuthor,
+                        "time" => $date,
+                    )
+                )) {
+                    $msg = "<p style='color: green; text-align: center;'>Thêm tin tức thành công !</p>";
+                } else {
+                    $msg = "<p style='color: red; text-align: center;'>Thêm tin tức thất bại !</p>";
+                }
+            }
+            require_once("View/admin/blog/add_blog.php");
+            break;
+        }
+    case 'edit_blog': {
+
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $dataId = $db->getId("blog", "blog_id", $id);
+
+                if (isset($_POST['editBlog'])) {
+                    $blogTitle = $_POST['blogTitle'];
+                    $blogImg = $_FILES['file']['name'];
+                    $blogContent = $_POST['blogContent'];
+                    $blogAuthor = $_POST['blogAuthor'];
+                    $timeUpdate = date('m/d H:i', time());
+                    if (isset($_FILES['file'])) {
+                        move_uploaded_file($_FILES['file']['tmp_name'], 'upload/' . $_FILES['file']['name']);
+                    }
+
+                    if ($blogTitle != $dataId['title']) {
+                        if ($db->Update(
+                            'blog',
+                            'blog_id',
+                            array(
+                                "title" => $blogTitle,
+                            ),
+                            $id
+                        )) {
+                            $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                        } else {
+                            $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                        }
+                    }
+
+                    if ($blogContent != $dataId['content']) {
+                        if ($db->Update(
+                            'blog',
+                            'blog_id',
+                            array(
+                                "content" => $blogContent,
+                            ),
+                            $id
+                        )) {
+                            $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                        } else {
+                            $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                        }
+                    }
+                    if ($blogAuthor != $dataId['author']) {
+                        if ($db->Update(
+                            'blog',
+                            'blog_id',
+                            array(
+                                "author" => $blogAuthor,
+                            ),
+                            $id
+                        )) {
+                            $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                        } else {
+                            $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                        }
+                    }
+                    if ($blogImg != "") {
+                        if ($db->Update(
+                            'blog',
+                            'blog_id',
+                            array(
+                                "image" => $blogImg,
+                            ),
+                            $id
+                        )) {
+                            $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                        } else {
+                            $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                        }
+                    }
+
+                    if ($blogImg != "") {
+                        if ($db->Update(
+                            'blog',
+                            'blog_id',
+                            array(
+                                "image" => $blogImg,
+                            ),
+                            $id
+                        )) {
+                            $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                        } else {
+                            $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                        }
+                    }
+
+                    if ($db->Update(
+                        'blog',
+                        'blog_id',
+                        array(
+                            "time" => $timeUpdate,
+                        ),
+                        $id
+                    )) {
+                        $msg = "<p style='color: green; text-align: center;'>Cập nhật tin tức thành công !</p>";
+                    } else {
+                        $msg = "<p style='color: red; text-align: center;'>Cập nhật tin tức thất bại !</p>";
+                    }
+
+                    $dataId = $db->getId("blog", "blog_id", $id);
+                }
+
+                require_once("View/admin/blog/edit_blog.php");
+                break;
+            }
+        }
+
+    case 'del_blog': {
+
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                if ($db->Delete("blog", "blog_id", $id)) {
+                    $msg = "success";
+                    $data = $db->Getall("blog");
+                } else {
+                    $msg = "error";
+                }
+            }
+
+            require_once("View/admin/blog/blog.php");
+            break;
+        }
+
+
         /**===================================== USER ==================================*/
     case 'user': {
             $data = $db->Getall("admin");

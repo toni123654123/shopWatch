@@ -30,8 +30,8 @@
                     <li class="nav__item"><a href="index.php" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="index.php?c=product" class="nav__link">Shop</a></li>
                     <li class="nav__item"><a href="index.php?c=history" class="nav__link">History</a></li>
-                    <li class="nav__item"><a href="#index.php?c=Blog" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="#index.php?c=Contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="index.php?c=blog" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="index.php?c=contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
 

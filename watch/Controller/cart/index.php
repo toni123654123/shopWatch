@@ -32,8 +32,13 @@ switch ($action) {
         }
 
     default: {
-            $cart = $_SESSION['cart'];
-            $heart = $_SESSION['heart'];
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
+            }
             require_once("View/cart/index.php");
             break;
         }

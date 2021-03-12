@@ -22,6 +22,11 @@
 					<div class="clearfix"></div>
 				</a>
 			</li>
+			<li id="menu-academico">
+				<a href="index.php?c=admin&a=blog" class="link_item"><i class="fa fa-book" aria-hidden="true"></i><span>Blog</span> </span>
+					<div class="clearfix"></div>
+				</a>
+			</li>
 			<?php
 			if (isset($_SESSION['data'])) {
 				if ($_SESSION['data'][0]['adRole'] == "2") { ?>

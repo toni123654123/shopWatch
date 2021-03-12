@@ -926,6 +926,193 @@ img {
   border-radius: 5px;
 }
 
+.blog__container {
+  row-gap: 20px;
+}
+
+.blog__box {
+  margin-bottom: 2.5rem;
+  background-color: #fafaff;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.blog__img {
+  width: 100%;
+  position: relative;
+}
+
+.blog__img img {
+  width: 100%;
+}
+
+.blog__time {
+  position: absolute;
+  bottom: 0;
+  color: #fafaff;
+  background-color: #ff2020;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  left: 10px;
+}
+
+.blog__data {
+  padding: 5px 10px;
+}
+
+.blog__title {
+  font-size: 1.25rem;
+  color: #0b1c39;
+  font-weight: 600;
+}
+
+.blog__title:hover {
+  color: #ff2020;
+  cursor: pointer;
+}
+
+.blog__desc {
+  font-size: 1.125rem;
+}
+
+.blog__note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.blog__author, .blog__cmt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: gray;
+  margin-top: var(--mb-2);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blog i {
+  margin-right: 3px;
+}
+
+.blog__cmt {
+  margin-left: 30px;
+  position: relative;
+}
+
+.blog__cmt::before {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 20px;
+  background-color: #4a4a4b;
+  top: 2px;
+  left: -12px;
+}
+
+.blog__cate--box {
+  padding: 20px;
+}
+
+.blog__cate--title {
+  font-size: 1.6rem;
+  color: #0b1c39;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.blog__cate--title::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+.blog__srch {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  width: 87%;
+  padding: 15px 20px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.blog .form-group {
+  margin-bottom: var(--mb-2);
+}
+
+.blog__icon-srch {
+  border: none;
+  outline: none;
+  color: #fafaff;
+  background: #ff2020;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 13.5px 15px;
+  font-size: 1.25rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.blog__btn-srch {
+  border: none;
+  outline: none;
+  color: #fafaff;
+  background: #ff2020;
+  width: 100%;
+  padding: 13.5px 15px;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.blog__other {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: var(--mb-3);
+}
+
+.blog__other--img {
+  width: 100px;
+  height: 100%;
+}
+
+.blog__other--title {
+  font-weight: 600;
+}
+
+.blog__other--title, .blog__other--desc {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  margin-bottom: var(--mb-1);
+}
+
 .background {
   height: 400px;
   overflow: hidden;
@@ -1144,6 +1331,34 @@ img {
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .blog__data {
+    padding: 25px;
+  }
+  .blog__box {
+    margin-bottom: 3.2rem;
+  }
+  .blog__title {
+    font-size: 1.65rem;
+  }
+  .blog__desc {
+    margin-top: var(--mb-3);
+    margin-bottom: var(--mb-3);
+  }
+  .blog__srch {
+    width: 92.5%;
+  }
+  .blog__other {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  .blog__other--img {
+    width: 1000px;
+    height: 100%;
+  }
+  .blog__other--data {
+    margin-left: var(--mb-3);
+  }
   .cart__container {
     -ms-grid-columns: 3fr 1fr;
         grid-template-columns: 3fr 1fr;
@@ -1229,6 +1444,13 @@ img {
     -ms-grid-column-span: 1;
     grid-column: 4/5;
     height: 330px;
+  }
+  .blog__container {
+    -ms-grid-columns: 800px 400px;
+        grid-template-columns: 800px 400px;
+  }
+  .blog__srch {
+    width: 85.5%;
   }
 }
 /*# sourceMappingURL=style.css.map */

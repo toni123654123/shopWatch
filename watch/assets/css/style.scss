@@ -865,6 +865,176 @@ img {
     }
 }
 
+// Blog
+.blog {
+    &__container {
+        row-gap: 20px;
+    }
+
+    &__box {
+        margin-bottom: 2.5rem;
+        background-color: $white-color;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__time {
+        position: absolute;
+        bottom: 0;
+        color: $white-color;
+        background-color: $first-color;
+        font-size: 1.2rem;
+        padding: 10px;
+        width: 65px;
+        text-align: center;
+        border-radius: 5px;
+        left: 10px;
+    }
+
+    &__data {
+        padding: 5px 10px;
+    }
+
+    &__title {
+        font-size: $h1-font-size;
+        color: $midnightblue;
+        font-weight: $font-semi;
+        &:hover {
+            color: $first-color;
+            cursor: pointer;
+        }
+    }
+
+    &__desc {
+        font-size: $h2-font-size;
+    }
+
+    &__note {
+        display: flex;
+    }
+
+    &__author,
+    &__cmt {
+        display: flex;
+        align-items: center;
+        color: gray;
+        margin-top: var(--mb-2);
+        justify-content: center;
+    }
+
+    i {
+        margin-right: 3px;
+    }
+
+    &__cmt {
+        margin-left: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1.5px;
+            height: 20px;
+            background-color: $text-color;
+            top: 2px;
+            left: -12px;
+        }
+    }
+
+    &__cate {
+        &--box {
+            padding: 20px;
+        }
+
+        &--title {
+            font-size: 1.6rem;
+            color: $midnightblue;
+            margin-bottom: 50px;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: rgba(0, 0, 0, 0.2);
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+            }
+        }
+    }
+
+    &__srch {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: none;
+        width: 87%;
+        padding: 15px 20px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .form-group {
+        margin-bottom: var(--mb-2);
+    }
+
+    &__icon-srch {
+        border: none;
+        outline: none;
+        color: $white-color;
+        background: $first-color;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 13.5px 15px;
+        font-size: $h1-font-size;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    &__btn-srch {
+        border: none;
+        outline: none;
+        color: $white-color;
+        background: $first-color;
+        width: 100%;
+        padding: 13.5px 15px;
+        font-size: $h2-font-size;
+        cursor: pointer;
+    }
+
+    &__other {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--mb-3);
+
+        &--img {
+            width: 100px;
+            height: 100%;
+        }
+
+        &--title {
+            font-weight: $font-semi;
+        }
+
+        &--title,
+        &--desc {
+            width: 100%; // chiều rộng bằng khối bao nó
+            overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
+            text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
+            -webkit-line-clamp: 1; // số dòng muốn hiển thị
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            margin-bottom: var(--mb-1);
+        }
+    }
+}
+
 .background {
     height: 400px;
     overflow: hidden;
@@ -1089,6 +1259,42 @@ img {
         }
     }
 
+    .blog {
+        &__data {
+            padding: 25px;
+        }
+
+        &__box {
+            margin-bottom: 3.2rem;
+        }
+
+        &__title {
+            font-size: 1.65rem;
+        }
+
+        &__desc {
+            margin-top: var(--mb-3);
+            margin-bottom: var(--mb-3);
+        }
+
+        &__srch {
+            width: 92.5%;
+        }
+
+        &__other {
+            justify-content: initial;
+
+            &--img {
+                width: 1000px;
+                height: 100%;
+            }
+
+            &--data {
+                margin-left: var(--mb-3);
+            }
+        }
+    }
+
     .cart {
         &__container {
             grid-template-columns: 3fr 1fr;
@@ -1176,6 +1382,16 @@ img {
             grid-row: 2/-1;
             grid-column: 4/5;
             height: 330px;
+        }
+    }
+
+    .blog {
+        &__container {
+            grid-template-columns: 800px 400px;
+        }
+
+        &__srch {
+            width: 85.5%;
         }
     }
 }
