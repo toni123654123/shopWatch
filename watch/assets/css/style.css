@@ -1114,6 +1114,12 @@ img {
   margin-bottom: var(--mb-1);
 }
 
+.contact__form textarea,
+.contact__form input {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
 .background {
   height: 400px;
   overflow: hidden;
