@@ -35,6 +35,10 @@ switch ($controller) {
             break;
         }
 
+    case 'contact': {
+            require_once("Controller/contact/index.php");
+            break;
+        }
     case 'cart': {
             require_once("Controller/cart/index.php");
             break;

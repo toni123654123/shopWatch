@@ -36,6 +36,17 @@ switch ($action) {
             }
             require_once("View/blog/item.php");
         }
+
+    case 'srch': {
+            if (isset($_GET['q'])) {
+                $srch = $_GET['q'];
+                $data = $db->Search("blog", "title", $srch);
+            }
+
+            require_once("View/blog/index.php");
+            break;
+        }
+
     default: {
 
             if (isset($_SESSION['cart'])) {

@@ -30,7 +30,9 @@
                 <div class="blog__box blog__cate--box">
                     <form action="">
                         <div class="form-group">
-                            <input type="search" name="" id="" class="blog__srch" placeholder="Tìm kiếm ...">
+                            <input type="hidden" name="c" value="blog">
+                            <input type="hidden" name="a" value="srch">
+                            <input type="search" name="q" class="blog__srch" placeholder="Tìm kiếm ...">
                             <button type="submit" class="blog__icon-srch"><i class='bx bx-search'></i></button>
                         </div>
                         <button type="submit" class="blog__btn-srch">Search</button>

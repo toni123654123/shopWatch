@@ -111,6 +111,8 @@
                 var title = location.hostname.split(".")[0].toUpperCase();
                 if (add != '') {
                     title = title + " | " + add;
+                } else {
+                    $(".nav__menu a[href='index.php']").addClass("active");
                 }
                 document.title = title;
             }
