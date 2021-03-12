@@ -19,12 +19,19 @@ switch ($action) {
             require_once("View/cart/index.php");
             break;
         }
-
     case 'del': {
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
 
-                unset($_SESSION['cart'][$id]);
+                unset
+                ($_SESSION['cart'][$id]);
+            }
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
             }
             $cart = $_SESSION['cart'];
             require_once("View/cart/index.php");
