@@ -15,6 +15,13 @@ switch ($action) {
                 unset($_SESSION['heart'][$id]);
             }
             $heart = $_SESSION['heart'];
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
+            }
             require_once("View/heart/index.php");
             break;
         }

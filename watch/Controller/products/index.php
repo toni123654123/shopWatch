@@ -75,11 +75,9 @@ switch ($action) {
                 $_SESSION['heart'][$id] = $item;
             }
 
-            if (!isset($_SESSION['heart'])) {
-                return  false;
-            } else {
+            if (isset($_SESSION['heart'])) {
                 $heart = $_SESSION['heart'];
-            }
+            } 
 
 
 
@@ -172,6 +170,15 @@ switch ($action) {
                 $cart = $_SESSION['cart'];
             }
 
+
+            
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+            if (isset($_SESSION['heart'])) {
+                $heart = $_SESSION['heart'];
+            }
+
             $data = $db->Getall("product");
             require_once("View/products/index.php");
             break;
@@ -199,6 +206,14 @@ switch ($action) {
             if (!isset($_SESSION['heart'])) {
                 return  false;
             } else {
+                $heart = $_SESSION['heart'];
+            }
+
+            
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+            }
+            if (isset($_SESSION['heart'])) {
                 $heart = $_SESSION['heart'];
             }
 
