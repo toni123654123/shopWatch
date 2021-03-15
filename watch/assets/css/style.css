@@ -1295,24 +1295,18 @@ img {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     max-height: 500px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .home__img {
     display: block;
-    height: 87.5%;
+    height: 48.5%;
     -ms-grid-column-align: center;
         justify-self: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .home__title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .home__desc {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     padding-bottom: var(--mb-4);
   }
   .new {
@@ -1443,6 +1437,25 @@ img {
   .home__container {
     max-height: calc(100vh - var(--header-height) + 3rem);
     height: 100vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home__img {
+    display: block;
+    height: 87.5%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home__title {
+    font-size: 3rem;
+  }
+  .home__desc {
+    font-size: 1.8rem;
+    padding-bottom: var(--mb-4);
   }
   .new__title {
     text-align: center;
